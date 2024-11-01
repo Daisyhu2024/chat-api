@@ -6,6 +6,9 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get('/', (req, res) => {
+    res.json({ message: 'Chat API is running' });
+});
 
 app.post('/api/chat/message', async (req, res) => {
     try {
